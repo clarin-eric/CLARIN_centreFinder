@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Kompetenzmatrix zur Identifikation eines geeigneten Clarin-Zentrums für ihre Daten</title> 
+    <!-- CSS -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/darkly/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="./angular-bootstrap/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animations.css">    
+    
+    <!-- JS -->
+    <!-- load angular, nganimate, and ui-router -->
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script> -->
+    <script src="./angular/angular.js"></script>
+    <!-- <script src="./protractor.js"></script> -->
+
+    <!-- http://cdnjs.com/libraries/angular-i18n -->
+    <script src="./angular/angular-locale_de-de.js"></script>    
+    <script src="./angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
+    <script src="appCentreFinder.js"></script>
+</head>
+
+<body ng-app="centreFinderApp">
+  <div class="container">
+    <div ui-view>
+      <div class="row">
+	<div class="col-sm-8 col-sm-offset-2">
+	  <div id="form-container">  
+	    <form name="competencesMatrix" ng-controller="centreFinderController">
+	      <div class="form-group">
+		<label for="germanProvider">Sie haben deutsch-sprachige Daten oder sind in Deutschland ansässig?</label>
+		<input type="checkbox" ng-model="checked" aria-label="Toggle ngShow">
+	      </div>
+	      <div class="check-element animate-hide" ng-hide="checked">
+		<span class="glyphicon glyphicon-thumbs-up"></span>
+		Zur Archivierung von fremdsprachigen Daten, oder von im Ausland ansässigen Daten, kontaktieren Sie bitte den
+		<em>Clarin Liasion Officer</em>: Dr. Thorsten Trippel,
+		<strong>thorsten.trippel@uni-tuebingen.de</strong>
+	      </div>
+	      
+	      <div class="check-element animate-hide" ng-show="checked">
+		<em>Bitte beschreiben Sie ihre Daten mit den bestmöglichen Kategorien.</em>
+		</br >
+		<p>
+		<div class="form-group">
+		  <label for="typeDataIt">Welche Art von sprachwissenschaftlichen Daten liegen vor?</label>	      
+		  <span ng-repeat="type in typeOfData">
+		    <label class="checkbox" for="{{type.id}}">
+		      <input type="checkbox" value="{{type.id}}" ng-model="userSelection.typeOfData[$index]"
+			     ng-true-value="'{{type.label_de}}'" name="{{type.id}}" id="{{type.id}}" />
+		      {{type.label_de}}
+		    </label>
+		  </span>
+		</div>
+		
+		<div class="form-group">
+		  <label for="LanguageIt">Um welche Sprache(n) handelt es sich?</label>	      
+		  <span ng-repeat="language in languageData">
+		    <label class="checkbox" for="{{language.id}}">
+		      <input type="checkbox" value="{{language.id}}" ng-model="userSelection.languageData[$index]"
+			     ng-true-value="'{{language.label_de}}'" name="{{language.id}}" id="{{language.id}}" />
+		      {{language.label_de}}
+		    </label>
+		  </span>
+		</div>
+		
+		<div class="form-group">
+		  <label for="LicenceIt">Sind die Daten öffentlich (oder unter Lizenz) ?</label>
+		  <br />
+		  <input type="radio" ng-model="userSelection.licence" value="ja">
+		  Ja
+		  <input type="radio" ng-model="userSelection.licence" value="nein">
+		  Nein
+		</div>
+		
+		<div class="form-group">
+		  <label for="typeResourceIt">Welcher Ressourcentyp liegt vor?</label>	      
+		  <span ng-repeat="resourceType in resourceTypes">
+		    <label class="checkbox" for="{{resourceType.id}}">
+		      <input type="checkbox" value="{{resourceType.id}}" ng-model="userSelection.resourceType[$index]"
+			     ng-true-value="'{{resourceType.label_de}}'" name="{{resourceType.id}}" id="{{resourceType.id}}" />
+		      {{resourceType.label_de}}
+		    </label>
+		  </span>
+		</div>
+		<p>
+		  <hr>
+		<p>
+ 		  Es gibt {{globalIntersection.length}} Zentrum/Zentren zur Archivierung ihrer Daten!
+		  Bitte kontaktieren Sie eines der unten aufgeführten Clarin-D Zentren:
+
+		  <ul class="example-animate-container">
+		    <li class="animate-repeat" ng-repeat="centre in globalIntersection | filter:q as results">
+		      [{{$index + 1}}] {{centre | giveAddress:this}}
+		    </li>
+		  </ul>
+	      </div>		
+	    </form>
+	  </div>
+	</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
