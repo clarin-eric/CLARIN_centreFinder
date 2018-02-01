@@ -201,7 +201,7 @@ angular.module('centreFinderApp', ['ui.bootstrap' ])
 	    for (var c in $scope.centres) {
 //		console.debug('centres', $scope.centres[c].pk);
 		if ($scope.centres[c].fields.consortium == 1) {
-		    console.debug("Found an Clarin-D institution:", $scope.centres[c].fields.name, $scope.centres[c].pk, $scope.centres[c].fields.shorthand);
+		    console.log("Found an Clarin-D institution:", $scope.centres[c].fields.name, $scope.centres[c].pk, $scope.centres[c].fields.shorthand);
 		    var centreCompact = { name:       $scope.centres[c].fields.name,
 					  shorthand:  $scope.centres[c].fields.shorthand,
 					  ac:         $scope.centres[c].fields.administrative_contact,
