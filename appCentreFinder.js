@@ -56,8 +56,8 @@ angular.module('centreFinderApp', ['ui.bootstrap' ])
 	"Mehrsprachige Daten"      : ["Liaison", "UdS", "HZSK"],	
 	"Deutsche Sprache"         : ["Liaison", "BBAW", "IMS", "IDS", "BAS", "EKUT", "HZSK", "ASV"],
 	"Andere Sprachen (nicht Deutsch)"   : ["Liaison", "UdS", "EKUT", "MPI-PL", "HZSK", "ASV", "IMS"],
-	"Minderheitensprache"      : ["Liaison", "IDS", "MPI-PL"],
-	"Bedrohte Sprache"         : ["Liaison", "MPI-PL"],
+	"Minderheitensprache"      : ["Liaison", "IDS", "MPI-PL", "HZSK"],
+	"Bedrohte Sprache"         : ["Liaison", "MPI-PL", "HZSK"],
 	"Historische Sprache"      : ["Liaison", "BBAW"],
 	"Gegenwartssprache"        : ["Liaison", "IDS", "ASV"],
 
@@ -68,7 +68,7 @@ angular.module('centreFinderApp', ['ui.bootstrap' ])
 	"Experimentaldaten"        : ["Liaison", "EKUT", "MPI-PL"],
 	"Sprachtechnologische Daten"  : ["Liaison", "BAS"],
 	"Andere Textdaten"         : ["Liaison"],
-	"Software"                 : ["Liaison", "EKUT", "ASV", "IMS", "BAS", "HZSK"],
+	"Software"                 : ["Liaison", "EKUT", "ASV", "IMS", "BAS"],
 	"Optische Zeichenerkennung (OCR)"   : ["Liaison", "BBAW"],
 	"Sprachstatistiken"        : ["Liaison", "BAS"],
 	"Aussprache-Lexika"        : ["Liaison", "BAS"]
