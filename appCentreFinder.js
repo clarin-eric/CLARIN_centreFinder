@@ -45,27 +45,27 @@ angular.module('centreFinderApp', ['ui.bootstrap' ])
     // we will store all of our matrix data in this object
     $scope.competenceModel = {
 
-	"Gesprochene Sprache"      : ["Liaison", "BAS", "MPI-PL", "HZSK", "IDS"],
+	"Gesprochene Sprache"      : ["Liaison", "BAS", "HZSK", "IDS"], //"MPI-PL",
 	"Geschriebene Sprache"     : ["Liaison", "BBAW", "IDS", "BAS", "EKUT", "HZSK", "ASV", "UdS", "IMS"],
-	"Multimodale Sprachdaten"  : ["Liaison", "BAS", "MPI-PL"],
-	"Gebärdensprache"          : ["Liaison", "MPI-PL", "HZSK"],
+	"Multimodale Sprachdaten"  : ["Liaison", "BAS"],  // "MPI-PL"
+	"Gebärdensprache"          : ["Liaison", "HZSK"], // "MPI-PL"
 
-	"Öffentliche Lizenz"       : ["Liaison", "BBAW", "IDS", "BAS", "EKUT", "HZSK", "ASV", "UdS", "MPI-PL", "IMS"], 
-	"Nicht-Öffentliche Lizenz" : ["Liaison", "EKUT", "BAS", "IDS", "MPI-PL", "HZSK"],
+	"Öffentliche Lizenz"       : ["Liaison", "BBAW", "IDS", "BAS", "EKUT", "HZSK", "ASV", "UdS", "IMS"],  // "MPI-PL"
+	"Nicht-Öffentliche Lizenz" : ["Liaison", "EKUT", "BAS", "IDS", "HZSK"], // "MPI-PL"
 
 	"Mehrsprachige Daten"      : ["Liaison", "UdS", "HZSK"],	
 	"Deutsche Sprache"         : ["Liaison", "BBAW", "IMS", "IDS", "BAS", "EKUT", "HZSK", "ASV"],
-	"Andere Sprachen (nicht Deutsch)"   : ["Liaison", "UdS", "EKUT", "MPI-PL", "HZSK", "ASV", "IMS"],
-	"Minderheitensprache"      : ["Liaison", "IDS", "MPI-PL", "HZSK"],
-	"Bedrohte Sprache"         : ["Liaison", "MPI-PL", "HZSK"],
+	"Andere Sprachen (nicht Deutsch)"   : ["Liaison", "UdS", "EKUT", "HZSK", "ASV", "IMS"], // "MPI-PL"
+	"Minderheitensprache"      : ["Liaison", "IDS", "HZSK"], // "MPI-PL"
+	"Bedrohte Sprache"         : ["Liaison", "HZSK"], // "MPI-PL"
 	"Historische Sprache"      : ["Liaison", "BBAW"],
 	"Gegenwartssprache"        : ["Liaison", "IDS", "ASV"],
 
 	"Lexikon"                  : ["Liaison", "EKUT", "ASV", "BBAW" ],
-	"Korpus"                   : ["BBAW", "IDS", "BAS", "EKUT", "HZSK", "ASV", "UdS", "MPI-PL", "IMS", "Liaison"],
+	"Korpus"                   : ["BBAW", "IDS", "BAS", "EKUT", "HZSK", "ASV", "UdS", "IMS", "Liaison"], //"MPI-PL"
 	"Baumbank"                 : ["Liaison", "EKUT", "IMS"],
 	"Digitale Editionen"       : ["Liaison", "BBAW"],
-	"Experimentaldaten"        : ["Liaison", "EKUT", "MPI-PL"],
+	"Experimentaldaten"        : ["Liaison", "EKUT" ], // "MPI-PL"
 	"Sprachtechnologische Daten"  : ["Liaison", "BAS"],
 	"Andere Textdaten"         : ["Liaison"],
 	"Software"                 : ["Liaison", "EKUT", "ASV", "IMS", "BAS"],
@@ -114,7 +114,7 @@ angular.module('centreFinderApp', ['ui.bootstrap' ])
     $scope.clarind_centres = [];
     
     // all Clarin centres (when user describes his data)
-    $scope.selectedClarinCentres = ["BBAW", "IDS", "BAS", "EKUT", "HZSK", "ASV", "UdS", "MPI-PL", "IMS", "Liaison"];
+    $scope.selectedClarinCentres = ["BBAW", "IDS", "BAS", "EKUT", "HZSK", "ASV", "UdS", "IMS", "Liaison"]; //"MPI-PL"
 
     // used to compute the intersection within a given facet
     $scope.resourceTypeIntersection = $scope.selectedClarinCentres;
