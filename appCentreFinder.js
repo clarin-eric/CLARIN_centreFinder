@@ -56,7 +56,7 @@ angular.module('centreFinderApp', ['ui.bootstrap' ])
 	"Mehrsprachige Daten"      : ["Liaison", "UdS", "HZSK"],	
 	"Deutsche Sprache"         : ["Liaison", "BBAW", "IMS", "IDS", "BAS", "EKUT", "HZSK", "ASV"],
 	"Andere Sprachen (nicht Deutsch)"   : ["Liaison", "UdS", "EKUT", "HZSK", "ASV", "IMS"], // "MPI-PL"
-	"Minderheitensprache"      : ["Liaison", "IDS", "HZSK"], // "MPI-PL"
+	"Varietaetensprache"       : ["Liaison", "IDS", "HZSK"], // "MPI-PL"
 	"Bedrohte Sprache"         : ["Liaison", "HZSK"], // "MPI-PL"
 	"Historische Sprache"      : ["Liaison", "BBAW"],
 	"Gegenwartssprache"        : ["Liaison", "IDS", "ASV"],
@@ -91,7 +91,7 @@ angular.module('centreFinderApp', ['ui.bootstrap' ])
     $scope.languageData = [{"id":1, "value":"multilingual",       "label_en":"Multi-lingual data",  "label_de":"Mehrsprachige Daten"},
 			   {"id":2, "value":"german",             "label_en":"German",              "label_de":"Deutsche Sprache"},			   
 			   {"id":3, "value":"nonGerman",          "label_en":"non-German",          "label_de":"Andere Sprachen (nicht Deutsch)"},
-			   {"id":4, "value":"minorityLanguage",   "label_en":"Minority Language",   "label_de":"Minderheitensprache"},
+			   {"id":4, "value":"varietyLanguage",    "label_en":"Variety Language",    "label_de":"Varietaetensprache"},
 			   {"id":5, "value":"endangeredLanguage", "label_en":"Endangered Language", "label_de":"Bedrohte Sprache"},
 			   {"id":6, "value":"oldLanguage",        "label_en":"Old Language",        "label_de":"Historische Sprache"},
 			   {"id":7, "value":"modernLanguage",     "label_en":"Modern Language",     "label_de":"Gegenwartssprache"}
